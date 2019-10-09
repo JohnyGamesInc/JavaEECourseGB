@@ -9,7 +9,7 @@
     <!-- Объявляем сервлет -->
     <servlet>
         <servlet-name>MainServlet</servlet-name>
-        <servlet-class>ru.gb.servlet.MainServlet</servlet-class>
+        <servlet-class>ru.gb.servlet.ControllerServlet</servlet-class>
     </servlet>
     <!-- Привязываем сервлет к URL -->
     <servlet-mapping>
