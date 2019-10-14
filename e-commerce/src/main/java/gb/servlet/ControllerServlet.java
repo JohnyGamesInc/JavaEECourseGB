@@ -15,6 +15,8 @@ import static gb.listener.ContextListener.PRODUCT_REPO;
 
 @WebServlet(name = "ControllerServlet", urlPatterns = {"", "/main", "/catalog"})
 public class ControllerServlet extends HttpServlet {
+    private static final String CORE_TEMPLATE = "/WEB-INF/templates/%s";
+    private String endedUrl;
 
     private static Logger logger = LoggerFactory.getLogger(ControllerServlet.class);
 
@@ -38,13 +40,12 @@ public class ControllerServlet extends HttpServlet {
                                   HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = "/WEB-INF/templates/";
         if (request.getServletPath().equals("/") ||
                 request.getServletPath().equals("/main")) {
-            url += "index.jsp";
+            endedUrl = String.format(CORE_TEMPLATE, "index.jsp");
         } else if (request.getServletPath().equals("/catalog")) {
-            url += "catalog.jsp";
+            endedUrl = String.format(CORE_TEMPLATE, "catalog.jsp");
         }
-        request.getRequestDispatcher(url).forward(request, response);
+        request.getRequestDispatcher(endedUrl).forward(request, response);
     }
 }

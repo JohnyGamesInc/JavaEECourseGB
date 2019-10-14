@@ -39,8 +39,7 @@ public class ProductRepository {
 
     private void createTableIfNotExists(Connection conn) throws SQLException {
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute("create table if not exists product " +
-                    "(id int auto_increment primary key, name varchar (25), description varchar(50), cost double");
+            stmt.execute("create table if not exists product (id int auto_increment primary key, name varchar (25), description varchar(50), cost double);");
         }
     }
 }
