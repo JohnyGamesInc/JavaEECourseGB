@@ -1,4 +1,4 @@
-package gb.servlet;
+package gb.controller;
 
 import gb.repository.ProductRepository;
 import org.slf4j.Logger;
